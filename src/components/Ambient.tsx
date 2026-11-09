@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
+import { usePagedScroll } from '../lib/usePagedScroll'
 import styles from './Ambient.module.css'
 
 /**
@@ -7,10 +8,12 @@ import styles from './Ambient.module.css'
  * - 포인터 위치를 CSS 변수(--mx, --my: -1~1)로 노출 → .px-* 패럴랙스
  * - 조준선 커서 (마우스 기기에서만)
  * - 라우트 전환 시 오렌지/블랙 사선 와이프
+ * - 휠/스와이프로 페이지 넘김
  */
 export function Ambient() {
   const cursor = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
+  usePagedScroll()
 
   useEffect(() => {
     const root = document.documentElement

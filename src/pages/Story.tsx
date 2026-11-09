@@ -50,6 +50,7 @@ export default function Story() {
   const wheelLock = useRef(0)
 
   const onWheel = (e: WheelEvent<HTMLElement>) => {
+    e.stopPropagation() // 타임라인 위 휠은 페이지 넘김 대신 챕터 이동
     const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
     if (Math.abs(delta) < 8 || e.timeStamp - wheelLock.current < 450) return
     wheelLock.current = e.timeStamp
