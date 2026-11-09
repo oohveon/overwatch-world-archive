@@ -1,0 +1,103 @@
+/* ---------- route wipe ---------- */
+.wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wipe span {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: -30%;
+  width: 160%;
+  transform: translateX(-110%) skewX(-18deg);
+}
+
+.wipeDark {
+  background: #141414;
+  animation: wipe 0.85s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+.wipeOrange {
+  background: var(--orange);
+  animation: wipe 0.85s cubic-bezier(0.7, 0, 0.2, 1) 0.08s both;
+}
+
+@keyframes wipe {
+  0% {
+    transform: translateX(-110%) skewX(-18deg);
+  }
+  45% {
+    transform: translateX(0) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(110%) skewX(-18deg);
+  }
+}
+
+/* ---------- cursor ---------- */
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 95;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.ring,
+.dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: -50% -50%;
+}
+
+.ring {
+  width: 34px;
+  height: 34px;
+  /* 네 모서리 브래킷 (GNB 활성 표시와 같은 모양) */
+  --c: var(--orange);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 10px 1.5px,
+    linear-gradient(var(--c), var(--c)) top left / 1.5px 10px,
+    linear-gradient(var(--c), var(--c)) top right / 10px 1.5px,
+    linear-gradient(var(--c), var(--c)) top right / 1.5px 10px,
+    linear-gradient(var(--c), var(--c)) bottom left / 10px 1.5px,
+    linear-gradient(var(--c), var(--c)) bottom left / 1.5px 10px,
+    linear-gradient(var(--c), var(--c)) bottom right / 10px 1.5px,
+    linear-gradient(var(--c), var(--c)) bottom right / 1.5px 10px;
+  background-repeat: no-repeat;
+  transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out), rotate 0.4s var(--ease-out);
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background: var(--orange);
+}
+
+.hot .ring {
+  width: 56px;
+  height: 56px;
+  rotate: 90deg;
+}
+
+.press .ring {
+  width: 26px;
+  height: 26px;
+}
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

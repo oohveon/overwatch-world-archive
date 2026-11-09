@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Ambient } from './components/Ambient'
 import { MenuProvider } from './components/MenuOverlay'
 import Archive from './pages/Archive'
 import Heroes from './pages/Heroes'
@@ -11,6 +12,7 @@ export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <MenuProvider>
+        <Ambient />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/story" element={<Story />} />

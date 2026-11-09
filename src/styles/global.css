@@ -121,7 +121,44 @@ h3 {
   animation: caret 0.8s steps(1) infinite;
 }
 
+/* 포인터 패럴랙스 — Ambient가 --mx/--my(-1~1)를 갱신. translate 속성은 transform과 별개로 합성된다. */
+.px-1,
+.px-2,
+.px-3,
+.px-r {
+  transition: translate 0.6s var(--ease-out);
+}
+
+.px-1 {
+  translate: calc(var(--mx, 0) * -10px) calc(var(--my, 0) * -6px);
+}
+
+.px-2 {
+  translate: calc(var(--mx, 0) * 18px) calc(var(--my, 0) * 10px);
+}
+
+.px-3 {
+  translate: calc(var(--mx, 0) * -36px) calc(var(--my, 0) * -14px);
+}
+
+.px-r {
+  translate: calc(var(--mx, 0) * 24px) calc(var(--my, 0) * -8px);
+}
+
+/* 기본 흑백 → 호버/선택 시 컬러 */
+.mono {
+  filter: grayscale(1) contrast(1.08);
+  transition: filter 0.6s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .px-1,
+  .px-2,
+  .px-3,
+  .px-r {
+    translate: none;
+  }
+
   *,
   *::before,
   *::after {

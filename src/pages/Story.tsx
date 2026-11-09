@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useRef, useState, type WheelEvent } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Crosshair } from '../components/Crosshair'
+import { DuoImage } from '../components/DuoImage'
 import { GnbWide } from '../components/Gnb'
 import { Stage } from '../components/Stage'
 import { CHAPTERS, chapterIndex } from '../data/chapters'
 import { asset, at } from '../lib/layout'
+import { useArrowKeys } from '../lib/useArrowKeys'
 import { useTypewriter } from '../lib/useTypewriter'
 import styles from './Story.module.css'
 
@@ -40,10 +42,24 @@ export default function Story() {
     setParams({ c: CHAPTERS[next].id }, { replace: true })
   }
 
+  // 키보드 ←/→ 와 타임라인 위 마우스 휠로 챕터 이동
+  useArrowKeys(
+    () => select(selected - 1),
+    () => select(selected + 1),
+  )
+  const wheelLock = useRef(0)
+
+  const onWheel = (e: WheelEvent<HTMLElement>) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+    if (Math.abs(delta) < 8 || e.timeStamp - wheelLock.current < 450) return
+    wheelLock.current = e.timeStamp
+    select(selected + (delta > 0 ? 1 : -1))
+  }
+
   return (
     <Stage width={3200} height={1080} label="오버워치 스토리 타임라인">
       {/* 00 / 배경 */}
-      <img className="deco" src={asset('story/bg-big.svg')} alt="" style={at(362, -317, 2705, 1723)} />
+      <img className="deco px-1" src={asset('story/bg-big.svg')} alt="" style={at(362, -317, 2705, 1723)} />
       <img className="deco" src={asset('story/upper-contour.svg')} alt="" style={at(505, 0, 1823, 279)} />
       <img className="deco" src={asset('story/stripe-top.svg')} alt="" style={at(2303, 0, 224, 180)} />
       <img className="deco" src={asset('story/stripe-left.svg')} alt="" style={at(833, 321, 133, 260)} />
@@ -81,7 +97,7 @@ export default function Story() {
         <img className="deco" src={asset('story/top-rail-shaded.svg')} alt="" style={at(1229, 0, 167, 18)} />
 
         <div className={`${styles.video} ${playing ? styles.playing : ''}`} style={at(171, 27, 1114, 359, { clipPath: VIDEO_CLIP })}>
-          <img key={preview.id} src={preview.image} alt={`${preview.ko} 장면`} className={styles.videoImage} />
+          <DuoImage src={preview.image} alt={`${preview.ko} 장면`} className={styles.videoImage} scan />
           <div className={styles.videoShade} />
           {playing && (
             <div className={styles.progress} style={at(230, 318, 690, 3)}>
@@ -146,7 +162,7 @@ export default function Story() {
       </aside>
 
       {/* 05 / 타임라인 */}
-      <section style={at(0, 657, 3200, 249)} aria-label="챕터 타임라인">
+      <section style={at(0, 657, 3200, 249)} aria-label="챕터 타임라인" onWheel={onWheel}>
         <span className="deco" style={at(47, 238, 3018, 1.5, { background: '#929292' })} />
         {hover !== null && hover !== selected && (
           <span className={`deco ${styles.trackHover}`} style={at(cardX(hover) - 64, 234, 382, 10)} />

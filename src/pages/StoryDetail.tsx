@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { DuoImage } from '../components/DuoImage'
 import { FitText } from '../components/FitText'
 import { Gnb } from '../components/Gnb'
 import { Stage } from '../components/Stage'
@@ -111,7 +112,7 @@ export default function StoryDetail() {
           HISTORICAL RECORD
         </p>
         <div className={styles.main} style={at(0, 62, 980, 483)}>
-          <img key={gallery[mainIdx]} src={gallery[mainIdx]} alt={`${chapter.ko} 기록 이미지`} />
+          <DuoImage src={gallery[mainIdx]} alt={`${chapter.ko} 기록 이미지`} className={styles.mainImage} scan delay={250} />
         </div>
         {SUB_X.map((x, i) => {
           const src = subs[i]

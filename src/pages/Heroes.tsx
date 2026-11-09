@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { DuoImage } from '../components/DuoImage'
 import { Gnb } from '../components/Gnb'
 import { Stage } from '../components/Stage'
 import { HEROES } from '../data/heroes'
 import { WORLD_HEROES } from '../data/world'
 import { asset, at } from '../lib/layout'
+import { useArrowKeys } from '../lib/useArrowKeys'
 import styles from './Heroes.module.css'
 
 // 하단 셀렉터 그룹 위치 (Figma: TRACER 65 / GENJI 538 / WINSTON 1022 / REAPER 1498 / MERCY 1980)
@@ -22,16 +24,22 @@ export default function Heroes() {
   }
   const go = (i: number) => setIndex((i + HEROES.length) % HEROES.length)
 
+  // 키보드 ←/→ 로 영웅 이동
+  useArrowKeys(
+    () => go(index - 1),
+    () => go(index + 1),
+  )
+
   return (
     <Stage width={2700} height={1080} label="오버워치 영웅 소개">
       <img className="deco" src={asset('hero/hud.svg')} alt="" style={at(0, 0, 2700, 1080)} />
       <Gnb active="hero" stageWidth={2700} />
-      <img className="deco" src={asset('hero/bg-big.svg')} alt="" style={at(327, 0, 2083, 1080)} />
+      <img className="deco px-1" src={asset('hero/bg-big.svg')} alt="" style={at(327, 0, 2083, 1080)} />
 
       {/* 히어로 비주얼 */}
       <section style={at(472.5, 148.5, 1498.5, 629.1)} aria-label={`${hero.ko} 비주얼`}>
-        <img className="deco" src={asset('hero/visual-back.svg')} alt="" style={at(0, 0, 1498.5, 629.1)} />
-        <p key={`n-${hero.id}`} className={styles.bigName} style={at(148.5, 128.25)} aria-hidden>
+        <img className="deco px-1" src={asset('hero/visual-back.svg')} alt="" style={at(0, 0, 1498.5, 629.1)} />
+        <p key={`n-${hero.id}`} className={`${styles.bigName} px-3`} style={at(148.5, 128.25)} aria-hidden>
           {hero.en}
         </p>
         <img className="deco" src={asset('hero/visual-front.svg')} alt="" style={at(0, 0, 1498.5, 629.1)} />
@@ -41,7 +49,16 @@ export default function Heroes() {
           </svg>
           <span className="pre">{`HERO VISUAL\n${hero.en}`}</span>
         </div>
-        <img key={`i-${hero.id}`} className={styles.heroImage} src={hero.image} alt={hero.ko} style={at(242.5, -21.5, 939, 626)} />
+        {/* 흑백 실루엣으로 등장 → 컬러로 차오름 */}
+        <DuoImage
+          key={`i-${hero.id}`}
+          className={`${styles.heroImage} px-2`}
+          src={hero.image}
+          alt={hero.ko}
+          delay={200}
+          style={at(242.5, -21.5, 939, 626)}
+          imgStyle={{ objectPosition: 'top center' }}
+        />
       </section>
 
       {/* 소개 */}

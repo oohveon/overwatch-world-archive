@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Crosshair } from '../components/Crosshair'
+import { DuoImage } from '../components/DuoImage'
 import { Gnb } from '../components/Gnb'
 import { Stage } from '../components/Stage'
 import { VIDEOS, VIDEO_CATEGORIES, type VideoCategory } from '../data/videos'
@@ -51,7 +52,7 @@ export default function Archive() {
       <section style={at(466, 238, 940, 466)} aria-label="영상 플레이어">
         <img className="deco" src={asset('archive/player-frame.svg')} alt="" style={at(-15, -14, 970, 494)} />
         <div className={`${styles.screen} ${playing ? styles.screenPlaying : ''}`} style={at(0, 0, 940, 466)}>
-          <img key={video.no} src={video.cover} alt={`${video.title} 영상 썸네일`} />
+          <DuoImage src={video.cover} alt={`${video.title} 영상 썸네일`} className={styles.cover} scan />
         </div>
         <div className={styles.meta} style={at(25, 22, 210, 92)}>
           <span className="deco" style={at(0, 0, 8, 30, { border: '2px solid var(--red)' })} />

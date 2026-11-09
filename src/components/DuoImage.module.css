@@ -1,0 +1,58 @@
+.wrap {
+  display: block;
+}
+
+.wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mono {
+  filter: grayscale(1) contrast(1.12) brightness(1.04);
+}
+
+.color {
+  clip-path: polygon(0 0, 0 0, -25% 100%, -25% 100%);
+  transition: clip-path 1.15s var(--ease-out) var(--duo-delay, 0ms);
+}
+
+.on .color {
+  clip-path: polygon(0 0, 125% 0, 100% 100%, -25% 100%);
+}
+
+.scan {
+  position: absolute;
+  top: -5%;
+  bottom: -5%;
+  left: -12%;
+  width: 3%;
+  background: linear-gradient(90deg, transparent, var(--orange) 40%, #ffd2b3 50%, var(--orange) 60%, transparent);
+  transform: skewX(-14deg);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.on .scan {
+  animation: scan 1.15s var(--ease-out) var(--duo-delay, 0ms) both;
+}
+
+@keyframes scan {
+  0% {
+    left: -12%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 112%;
+    opacity: 0;
+  }
+}

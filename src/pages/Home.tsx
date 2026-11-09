@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { DuoImage } from '../components/DuoImage'
 import { Gnb } from '../components/Gnb'
 import { Stage } from '../components/Stage'
 import { asset, at } from '../lib/layout'
@@ -52,11 +53,13 @@ export default function Home() {
   return (
     <Stage width={1920} height={1080} label="Overwatch World Archive 홈">
       {/* 배경 그래픽 + 키 비주얼 */}
-      <img className="deco" src={asset('home/bg.svg')} alt="" style={at(0, 0, 1920, 1080)} />
-      <img
-        className={`deco ${styles.keyVisual}`}
+      <img className="deco px-1" src={asset('home/bg.svg')} alt="" style={at(0, 0, 1920, 1080)} />
+      {/* IN: 흑백 → 타이핑 완료(OUT) 순간 컬러로 차오름 */}
+      <DuoImage
+        className={`deco px-2 ${styles.keyVisual}`}
         src={asset('home/heroes.webp')}
         alt="라인하르트, 트레이서, 솔저: 76이 함께 선 키 비주얼"
+        active={done}
         style={at(481, 146, 1439, 832)}
       />
 
@@ -111,9 +114,9 @@ export default function Home() {
         <span>DATABASE VER. 01</span>
       </p>
 
-      <img className="deco" src={asset('home/line-1.svg')} alt="" style={at(972.26, 666.5, 216, 209)} />
-      <img className="deco" src={asset('home/line-2.svg')} alt="" style={at(1366, 881, 163, 202)} />
-      <img className="deco" src={asset('home/line-3.svg')} alt="" style={at(1262.5, 859, 105, 25)} />
+      <img className="deco px-r" src={asset('home/line-1.svg')} alt="" style={at(972.26, 666.5, 216, 209)} />
+      <img className="deco px-r" src={asset('home/line-2.svg')} alt="" style={at(1366, 881, 163, 202)} />
+      <img className="deco px-r" src={asset('home/line-3.svg')} alt="" style={at(1262.5, 859, 105, 25)} />
 
       <div style={at(1563, 674, 293)}>
         {phase === 'in' ? (

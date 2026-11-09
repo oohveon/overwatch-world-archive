@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Crosshair } from '../components/Crosshair'
+import { DuoImage } from '../components/DuoImage'
 import { FitText } from '../components/FitText'
 import { Gnb } from '../components/Gnb'
 import { Stage } from '../components/Stage'
 import { HEROES } from '../data/heroes'
 import { FACTION_FILTERS, RELATIONS, WORLD_HEROES, type Faction } from '../data/world'
 import { asset, at } from '../lib/layout'
+import { useArrowKeys } from '../lib/useArrowKeys'
 import styles from './World.module.css'
 
 const ROSTER_X = [40, 214, 388, 562, 736, 911, 1085, 1259, 1433, 1607]
@@ -29,6 +31,13 @@ export default function World() {
   const selectId = (id: string) => select(WORLD_HEROES.findIndex((h) => h.id === id))
   const inFilter = (f: Faction) => filter === 'ALL' || filter === f
   const hasHeroPage = HEROES.some((h) => h.id === hero.id)
+  const [hoverId, setHoverId] = useState<string | null>(null)
+
+  // 키보드 ←/→ 로 로스터 이동
+  useArrowKeys(
+    () => select(index - 1),
+    () => select(index + 1),
+  )
 
   return (
     <Stage width={1920} height={1080} label="오버워치 영웅 관계도">
@@ -81,7 +90,7 @@ export default function World() {
       {/* 관계도 */}
       <section style={at(470, 164, 940, 712)} aria-label="트레이서 관계도">
         {RELATIONS.map((r) => {
-          const on = r.heroId === hero.id
+          const on = r.heroId === hero.id || r.heroId === hoverId
           const color = r.tone === 'accent' ? 'var(--red)' : 'var(--grey-4)'
           return (
             <div key={r.heroId} className={`${styles.relation} ${on ? styles.relationOn : ''}`}>
@@ -107,6 +116,10 @@ export default function World() {
               className={`${styles.mapCard} ${on ? styles.mapCardOn : ''} ${inFilter(h.faction) ? '' : styles.dim}`}
               style={at(r.card.x, r.card.y, r.card.w, r.card.h)}
               onClick={() => selectId(h.id)}
+              onMouseEnter={() => setHoverId(h.id)}
+              onMouseLeave={() => setHoverId(null)}
+              onFocus={() => setHoverId(h.id)}
+              onBlur={() => setHoverId(null)}
               aria-pressed={on}
               aria-label={`${h.ko} — 트레이서와의 관계: ${r.label}`}
             >
@@ -143,9 +156,15 @@ export default function World() {
           <p className={styles.panelKo} style={at(28, 145)}>{hero.ko}</p>
           <div className={styles.panelImage} style={at(28, 190, 318, 184)}>
             {hero.panelImage ? (
-              <img src={hero.panelImage} alt={`${hero.ko} 이미지`} style={at(-5, -5, 328, 190)} />
+              <DuoImage src={hero.panelImage} alt={`${hero.ko} 이미지`} scan delay={150} style={at(-5, -5, 328, 190)} />
             ) : (
-              <img src={hero.mapImage ?? hero.portrait} alt={`${hero.ko} 이미지`} className={styles.panelPortrait} />
+              <DuoImage
+                src={hero.mapImage ?? hero.portrait}
+                alt={`${hero.ko} 이미지`}
+                delay={150}
+                className={styles.panelPortrait}
+                imgStyle={{ objectPosition: 'center 20%' }}
+              />
             )}
           </div>
           <dl className={styles.facts} style={at(28, 391, 318)}>
