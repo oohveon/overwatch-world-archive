@@ -9,7 +9,7 @@ import World from './pages/World'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <MenuProvider>
         <Routes>
           <Route path="/" element={<Home />} />

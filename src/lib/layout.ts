@@ -6,4 +6,4 @@ export function at(x: number, y: number, w?: number, h?: number, extra?: CSSProp
 }
 
 /** public/ 아래 에셋 경로 */
-export const asset = (path: string) => `/assets/${path}`
+export const asset = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`
