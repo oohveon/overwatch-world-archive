@@ -1,0 +1,165 @@
+.band {
+  background: var(--paper);
+}
+
+.gnb {
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 240px;
+  font-family: var(--f-rc);
+  color: var(--ink);
+}
+
+.brandName {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.brandSub {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.brandStatus {
+  font-size: 10px;
+  color: var(--amber);
+}
+
+.brackets {
+  transition: left 0.35s var(--ease-out);
+}
+
+.divider {
+  background: var(--line);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+
+.item:hover,
+.item[aria-current='page'] {
+  color: var(--orange);
+}
+
+.utility {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lang,
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+}
+
+.lang {
+  gap: 8px;
+}
+
+.lang span {
+  font-family: var(--f-inter);
+  font-weight: 400;
+  font-size: 16px;
+  transform: translateY(-4px);
+}
+
+.menu {
+  gap: 12px;
+}
+
+.menu:hover {
+  color: var(--orange);
+}
+
+/* ---------- wide (Story 3200) ---------- */
+.wide {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 120px;
+  z-index: 20;
+}
+
+.wideBrand {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 420px;
+  height: 120px;
+}
+
+.wideName {
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 20px;
+  color: #191919;
+  white-space: nowrap;
+}
+
+.wideStatus {
+  font-family: var(--f-rc);
+  font-size: 19px;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.wideItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-rc);
+  font-size: 22px;
+  color: #242424;
+  transition: color 0.2s;
+}
+
+.wideItem:hover {
+  color: var(--orange);
+}
+
+.wideActive {
+  font-weight: 700;
+}
+
+.wideLang {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  font-family: var(--f-rc);
+  font-size: 21px;
+  color: #282828;
+}
+
+.wideMenu span {
+  background: #191919;
+  transition: background 0.2s;
+}
+
+.wideMenu:hover span {
+  background: var(--orange);
+}

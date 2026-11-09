@@ -1,0 +1,405 @@
+/* ---------- visual ---------- */
+.bigName {
+  font-family: var(--f-rc);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 337.5px;
+  line-height: 1;
+  color: #f7f7f7;
+  white-space: nowrap;
+  animation: name-in 0.6s var(--ease-out) both;
+}
+
+@keyframes name-in {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+}
+
+.hudLabel {
+  display: flex;
+  gap: 9.45px;
+  font-family: var(--f-rc);
+  font-size: 16.2px;
+  line-height: 1.15;
+  color: #dedede;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: top center;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.12));
+  animation: hero-in 0.7s var(--ease-out) both;
+  pointer-events: none;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateX(80px) scale(0.97);
+  }
+}
+
+/* ---------- intro ---------- */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16.2px;
+}
+
+.introKicker {
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 29.7px;
+  color: var(--ink-2);
+}
+
+.introTitle {
+  margin: 0;
+  font-family: var(--f-barlow);
+  font-weight: 800;
+  font-size: 86.4px;
+  line-height: 0.94;
+  color: var(--ink-2);
+}
+
+.introTagline {
+  display: flex;
+  align-items: center;
+  gap: 29.7px;
+  font-weight: 700;
+  font-size: 18.9px;
+  color: var(--grey-1);
+}
+
+.introTagline span {
+  width: 60.75px;
+  height: 1.35px;
+  background: var(--orange);
+}
+
+.introBody {
+  padding-top: 18.9px;
+  font-weight: 500;
+  font-size: 16.2px;
+  line-height: 1.6;
+  color: var(--grey-1);
+}
+
+.orangeNote {
+  font-family: var(--f-rc);
+  font-weight: 500;
+  font-size: 14.85px;
+  line-height: 1.24;
+  color: var(--orange);
+}
+
+.tagline {
+  line-height: 1.22;
+  animation: fade-in 0.6s var(--ease-out) both;
+}
+
+/* ---------- profile ---------- */
+.profileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10.8px;
+  animation: profile-in 0.5s var(--ease-out) both;
+}
+
+@keyframes profile-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.identifier {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35px;
+  font-family: var(--f-rc);
+}
+
+.idNo {
+  font-weight: 700;
+  font-size: 37.8px;
+  line-height: 1;
+  color: var(--ink-2);
+}
+
+.idEn {
+  font-weight: 500;
+  font-size: 17.55px;
+  color: var(--grey-1);
+}
+
+.name {
+  display: flex;
+  align-items: baseline;
+  gap: 32.4px;
+  margin: 0;
+  font-weight: 900;
+  font-size: 37.8px;
+  color: var(--ink-2);
+}
+
+.name span {
+  font-family: var(--f-rc);
+  font-weight: 600;
+  font-size: 24.3px;
+}
+
+.quote {
+  width: 398px;
+  font-size: 16.2px;
+  color: var(--grey-1);
+}
+
+.divider {
+  width: 288.9px;
+  height: 1.35px;
+  margin: 0;
+  border: 0;
+  background: #c7c7c7;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 4.05px;
+  margin: 0;
+}
+
+.bio div {
+  display: flex;
+  gap: 27px;
+}
+
+.bio dt {
+  width: 98.55px;
+  flex: none;
+  font-weight: 700;
+  font-size: 16.2px;
+  color: var(--ink-2);
+}
+
+.bio dd {
+  margin: 0;
+  font-size: 16.2px;
+  color: var(--grey-1);
+}
+
+.bioText {
+  padding: 13.5px 0 16.2px;
+  width: 400px;
+  font-size: 16.2px;
+  line-height: 1.58;
+  color: var(--grey-1);
+}
+
+.abilityTitle {
+  font-family: var(--f-rc);
+  font-weight: 600;
+  font-size: 18.9px;
+  color: var(--ink-2);
+}
+
+.abilities {
+  display: flex;
+  gap: 37.8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abilities li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.4px;
+  width: 86.4px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--grey-1);
+  white-space: nowrap;
+}
+
+.abilityPanel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86.4px;
+  height: 86.4px;
+  background: var(--grey-3);
+  border: 0.945px solid #c7c7c7;
+  transition: background 0.2s;
+}
+
+.abilityPanel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 31px;
+  height: 31px;
+  background: var(--paper-3);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.abilityPanel img {
+  position: relative;
+  width: 68px;
+  height: 68px;
+}
+
+.abilities li:hover .abilityPanel {
+  background: var(--orange);
+}
+
+.abilityNo {
+  position: relative;
+  font-family: var(--f-raj);
+  font-weight: 700;
+  font-size: 30px;
+  color: #f0f0f0;
+}
+
+.detailsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 261.9px;
+  height: 55.35px;
+  padding: 0 29.7px;
+  background: #262626;
+  border: 1.35px solid var(--ink-2);
+  font-weight: 500;
+  font-size: 17.55px;
+  color: #f7f7f7;
+  transition: background 0.2s;
+}
+
+.detailsBtn svg {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.detailsBtn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.detailsBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* ---------- selectors ---------- */
+.arrow svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.arrow svg path {
+  fill: none;
+  stroke: #929292;
+  stroke-width: 2.03;
+}
+
+.arrow {
+  border: 2.03px solid #929292;
+  transition: background 0.2s;
+}
+
+.arrow:hover {
+  background: var(--ink);
+}
+
+.arrow:hover svg path {
+  stroke: #fff;
+}
+
+.selector {
+  text-align: left;
+}
+
+.field {
+  overflow: hidden;
+  transition: filter 0.3s;
+}
+
+.fieldRole {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--grey-1);
+}
+
+.thumb {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.thumb img {
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(0.6) contrast(0.95);
+  transition: filter 0.3s, transform 0.4s var(--ease-out);
+}
+
+.selector:hover .thumb img,
+.selectorOn .thumb img {
+  filter: none;
+}
+
+.selector:hover .thumb img {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.selLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35px;
+  z-index: 1;
+}
+
+.selNo {
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 43.2px;
+  line-height: 1;
+  color: var(--ink-2);
+}
+
+.selKo {
+  font-weight: 900;
+  font-size: 17.55px;
+  color: var(--ink-2);
+}
+
+.selEn {
+  font-family: var(--f-rc);
+  font-size: 13.5px;
+  color: var(--grey-1);
+}
+
+.selRole {
+  font-size: 12.15px;
+  color: var(--grey-1);
+}
+
+.selectorOn .selNo {
+  color: var(--orange);
+}
+
+.selRail {
+  transform-origin: left;
+  animation: rail-in 0.4s var(--ease-out) both;
+}
+
+@keyframes rail-in {
+  from {
+    transform: scaleX(0);
+  }
+}

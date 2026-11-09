@@ -1,0 +1,10 @@
+<svg width="1498.5" height="629.1" viewBox="0 0 1498.5 629.1" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 근사본: Figma API 한도로 원본 SVG를 받지 못해 좌표 기반으로 재구성. Figma에서 같은 레이어를 SVG로 내보내 이 파일을 덮어쓰면 그대로 교체된다. -->
+<!-- Figma layer: Diagonal backdrop / field / bands / cut (135:2563~2568) -->
+<path d="M300 0H739.8L439.8 604.8H0Z" fill="#D2D2D2"/>
+<path d="M567.25 40.5H1485L1235 604.8H317.25Z" fill="#D2D2D2"/>
+<path d="M540 0H741.15L240 603.45H37.8Z" fill="#ED6516"/>
+<path d="M932 1.35H1132.65L695 603.45H495.45Z" fill="#B4B4B4"/>
+<path d="M1335 43.2H1485L1231 629.1H1081.35Z" fill="#ED6516"/>
+<path d="M474 152.55H1371.6L1221.6 568.35H324Z" fill="#E2E2E2"/>
+</svg>

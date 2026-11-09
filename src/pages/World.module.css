@@ -1,0 +1,391 @@
+/* ---------- intro ---------- */
+.kicker {
+  font-family: var(--f-raj);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--red);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--f-barlow);
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 0.98;
+  color: var(--ink-3);
+}
+
+.titleKr {
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--ink-3);
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink-3);
+  word-break: keep-all;
+}
+
+.filter {
+  border-top: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.filterOn {
+  border-top-color: var(--grey-4);
+}
+
+.filterDot {
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 3px;
+  height: 3px;
+  background: var(--grey-4);
+  transition: all 0.2s;
+}
+
+.filterOn .filterDot {
+  width: 5px;
+  height: 10px;
+  background: #000;
+}
+
+.filterName {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  font-family: var(--f-raj);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--grey-4);
+  transition: color 0.2s;
+}
+
+.filterOn .filterName {
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.filter:hover .filterName {
+  color: var(--ink-3);
+}
+
+.filterCount {
+  position: absolute;
+  left: 252px;
+  top: 12px;
+  font-family: var(--f-raj);
+  font-size: 14px;
+  color: var(--grey-4);
+}
+
+.filterOn .filterCount {
+  color: #000;
+}
+
+/* ---------- map ---------- */
+.relation {
+  transition: opacity 0.3s;
+}
+
+.relLabel {
+  font-family: var(--f-raj);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.relCode {
+  font-family: var(--f-raj);
+  font-size: 10px;
+  color: var(--grey-4);
+}
+
+.relLine,
+.relDot {
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+
+.relDot {
+  border-radius: 50%;
+}
+
+.relationOn .relLine {
+  box-shadow: 0 0 0 1px var(--orange);
+}
+
+.relationOn .relDot {
+  transform: scale(1.6);
+}
+
+.relationOn .relLabel {
+  color: var(--orange);
+}
+
+.mapCard {
+  overflow: hidden;
+  background: var(--paper-2);
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  transition: border-color 0.2s, opacity 0.3s, transform 0.3s var(--ease-out);
+}
+
+.mapCard img {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.mapCard:hover {
+  border-color: var(--grey-4);
+}
+
+.mapCard:hover img {
+  transform: scale(1.04);
+}
+
+.mapCardOn,
+.mapCardOn:hover {
+  border: 2px solid #000;
+}
+
+.center {
+  border: 2px solid #000;
+}
+
+.mapEn {
+  font-family: var(--f-barlow);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 28px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.mapKo {
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.mapNo,
+.centerNo {
+  font-family: var(--f-raj);
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 34px;
+  color: var(--grey-4);
+}
+
+.mapCardOn .mapNo,
+.centerNo {
+  color: #000;
+}
+
+.centerEn {
+  font-family: var(--f-barlow);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  color: var(--ink-3);
+}
+
+.dim {
+  opacity: 0.28;
+}
+
+/* ---------- panel ---------- */
+.panel {
+  background: var(--paper-2);
+  border: 1px solid var(--grey-4);
+}
+
+.panelBody > * {
+  animation: fade-in 0.4s var(--ease-out) both;
+}
+
+.panelNo {
+  font-family: var(--f-raj);
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 1;
+  color: var(--red);
+}
+
+.panelKicker {
+  font-family: var(--f-raj);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.panelEn {
+  margin: 0;
+  font-family: var(--f-barlow);
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.panelKo {
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--ink-3);
+}
+
+.panelImage {
+  overflow: hidden;
+  background: var(--grey-4);
+}
+
+.panelImage img {
+  object-fit: cover;
+}
+
+.panelPortrait {
+  width: 100%;
+  height: 100%;
+  object-position: center 20%;
+  background: linear-gradient(160deg, #d6d6d6, #a9a9a9);
+}
+
+.facts {
+  margin: 0;
+}
+
+.facts div {
+  position: relative;
+  height: 31px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.facts dt {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-family: var(--f-raj);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.facts dd {
+  position: absolute;
+  left: 146px;
+  top: 8px;
+  margin: 0;
+  font-family: var(--f-raj);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.panelDesc {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ink-3);
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 54px 0 65px;
+  background: var(--ink-3);
+  font-family: var(--f-raj);
+  font-weight: 600;
+  font-size: 16px;
+  color: #f5f5f5;
+  transition: background 0.2s;
+}
+
+.viewBtn svg {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.viewBtn:hover {
+  background: var(--red);
+}
+
+.viewBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* ---------- roster ---------- */
+.rosterArrow {
+  border: 1px solid var(--grey-4);
+  transition: background 0.2s;
+}
+
+.rosterArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rosterArrow path {
+  fill: none;
+  stroke: var(--grey-3);
+  stroke-width: 1.5;
+}
+
+.rosterArrow:hover {
+  background: var(--ink-3);
+}
+
+.rosterArrow:hover path {
+  stroke: #fff;
+}
+
+.rosterCard {
+  background: var(--paper-2);
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  transition: border-color 0.2s, opacity 0.3s, transform 0.3s var(--ease-out);
+}
+
+.rosterCard img {
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.rosterCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--grey-4);
+}
+
+.rosterOn,
+.rosterOn:hover {
+  border: 2px solid #000;
+}
+
+.rosterEn {
+  font-family: var(--f-barlow);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.rosterKo {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--ink-3);
+}
+
+.rosterNo {
+  font-family: var(--f-raj);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 24px;
+  color: var(--grey-4);
+}
+
+.rosterOn .rosterNo {
+  color: #000;
+}

@@ -1,0 +1,5 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 근사본: Figma API 한도로 원본 SVG를 받지 못해 미리보기 기준으로 재구성. Figma에서 같은 레이어를 SVG로 내보내 이 파일을 덮어쓰면 그대로 교체된다. -->
+<!-- Figma layer: Architectural grid (135:2664) -->
+<path d="M156 134H1862M156 134L0 330M1862 134L1920 200M0 750H1920M400 134L620 420M1500 134L1280 420M620 420L400 750M1280 420L1500 750M1862 134L1700 420L1862 750M156 750L0 950M1760 750L1920 950M0 1050H1920" stroke="#E5E5E5"/>
+</svg>

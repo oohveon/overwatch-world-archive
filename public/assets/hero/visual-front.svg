@@ -1,0 +1,9 @@
+<svg width="1498.5" height="629.1" viewBox="0 0 1498.5 629.1" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 근사본: Figma API 한도로 원본 SVG를 받지 못해 좌표 기반으로 재구성. Figma에서 같은 레이어를 SVG로 내보내 이 파일을 덮어쓰면 그대로 교체된다. -->
+<!-- Figma layer: Lower overlay / mesh / brackets / stripe / baseline (135:2570~2577) -->
+<path d="M399.95 402.3H1274.4L1194.4 603.45H319.95Z" fill="#C5C5C5" fill-opacity="0.85"/>
+<g stroke="#E0E0E0" stroke-width="0.81"><path d="M24.3 603.45L330 12.15M330 12.15H1435M1435 12.15L1180 603.45M600 12.15L330 603.45M900 12.15L650 603.45"/></g>
+<path d="M24.3 394.2V548.1H90M1255.5 394.2V548.1H1189.8" stroke="#F7F7F7" stroke-width="2.7"/>
+<path d="M1416 195.75H1436.4L1406.85 288.9H1386.45Z" fill="#656565"/>
+<rect x="384.75" y="628.02" width="796.5" height="1.08" fill="#ED6516"/>
+</svg>

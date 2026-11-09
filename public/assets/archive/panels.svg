@@ -1,0 +1,19 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 근사본: Figma API 한도로 원본 SVG를 받지 못해 미리보기 기준으로 재구성. Figma에서 같은 레이어를 SVG로 내보내 이 파일을 덮어쓰면 그대로 교체된다. -->
+<!-- Figma layer: Footer panel / Player baseline / Player crown / Technical panels (135:2660~2663) -->
+<g fill="#B8B8B8">
+<path d="M975 204H1373L1364 221H966Z"/>
+<path d="M625 705H1068L1060 719H617Z"/>
+<path d="M1356 1052H1464L1456 1067H1348Z"/>
+</g>
+<g fill="#ED6516">
+<rect x="184" y="120" width="54" height="4"/>
+<path d="M950 206H1381L1362 231H931Z"/>
+<path d="M345 500H381L311 600H275Z"/>
+<path d="M1250 719H1362L1331 765H1219Z"/>
+<path d="M1570 735H1719L1699 769H1550Z"/>
+<path d="M0 1062H244L229 1080H0Z"/>
+<path d="M1300 1062H1475L1460 1080H1287Z"/>
+<path d="M1745 1062H1920V1080H1731Z"/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 근사본: Figma API 한도로 원본 SVG를 받지 못해 미리보기 기준으로 재구성. Figma에서 같은 레이어를 SVG로 내보내 이 파일을 덮어쓰면 그대로 교체된다. -->
+<!-- Figma layer: Geometric panels (135:2763) -->
+<g fill="#ED6516">
+<path d="M106 115H188L281 244H200Z"/>
+<path d="M475 631H544L362 881H256Z"/>
+<path d="M1475 137H1562L1325 375H1231Z"/>
+<path d="M1430 837H1452L1420 875H1398Z"/>
+<path d="M1880 1000H1920V1012L1862 1080H1787Z"/>
+</g>
+</svg>

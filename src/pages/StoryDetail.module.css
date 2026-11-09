@@ -1,0 +1,316 @@
+/* ---------- bottom ---------- */
+.step {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  height: 42px;
+}
+
+.step img {
+  transition: transform 0.3s var(--ease-out);
+}
+
+a.step:hover img {
+  transform: translateX(-6px);
+}
+
+a.stepNext:hover img {
+  transform: translateX(6px);
+}
+
+.stepNext .stepText {
+  align-items: flex-end;
+  width: 171px;
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--f-rc);
+  white-space: nowrap;
+}
+
+.stepLabel {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 28px;
+  color: var(--ink-2);
+}
+
+.stepName {
+  font-size: 14px;
+  color: var(--grey-3);
+}
+
+a.step:hover .stepLabel {
+  color: var(--orange);
+}
+
+.stepOff {
+  cursor: default;
+}
+
+.stepOff img {
+  opacity: 0.3;
+}
+
+.stepOff .stepName {
+  color: #ababab;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.progressText {
+  font-family: var(--f-rc);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--ink-2);
+}
+
+.segments {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  height: 10px;
+}
+
+.seg,
+.segOn {
+  flex: 1;
+  background: #c9c9c9;
+  transition: background 0.2s;
+}
+
+.seg:hover {
+  background: var(--orange);
+}
+
+.segOn {
+  background: var(--ink-2);
+}
+
+/* ---------- index ---------- */
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.indexItem,
+.indexOn {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  border-bottom: 1px solid #c9c9c9;
+  font-family: var(--f-rc);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--grey-3);
+  white-space: nowrap;
+  transition: color 0.2s, padding 0.3s var(--ease-out);
+}
+
+.index > :last-child {
+  border-bottom: 0;
+}
+
+.indexOn {
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.indexItem:hover {
+  color: var(--orange);
+  padding-left: 6px;
+}
+
+/* ---------- images ---------- */
+.record {
+  font-family: var(--f-rc);
+  font-size: 15px;
+  line-height: 18px;
+  color: #555;
+}
+
+.main {
+  overflow: hidden;
+  border: 1.2px solid #999;
+  background: #e6e6e6;
+}
+
+.main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: reveal 0.6s var(--ease-out) both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+.sub {
+  overflow: hidden;
+}
+
+.sub img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out), filter 0.3s;
+}
+
+.sub:hover img {
+  transform: scale(1.06);
+  filter: contrast(1.1);
+}
+
+.subEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-top: 20px;
+  background: #f0f0f0;
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 15px;
+  color: #8a8a8a;
+}
+
+.subEmpty svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.subEmpty span {
+  position: relative;
+}
+
+.subEmptyKr {
+  font-family: var(--f-kr);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* ---------- info ---------- */
+.info > * {
+  animation: fade-in 0.5s var(--ease-out) both;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.back img {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.back:hover {
+  color: var(--orange);
+}
+
+.back:hover img {
+  transform: translateX(-6px);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.kicker {
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--ink-2);
+}
+
+.number {
+  height: 185px;
+  font-family: var(--f-chakra);
+  font-weight: 700;
+  font-size: 210px;
+  line-height: 185px;
+  color: transparent;
+  -webkit-text-stroke: 1.8px var(--orange);
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--f-russo);
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.koTitle {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.koTitle h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.koTitle span {
+  width: 61px;
+  height: 1px;
+  background: var(--grey-3);
+}
+
+.body {
+  font-size: 19px;
+  line-height: 25px;
+  color: var(--grey-3);
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.facts div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 36px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.facts dt {
+  flex: none;
+  width: 120px;
+  font-family: var(--f-rc);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 16px;
+  color: #676767;
+}
